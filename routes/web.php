@@ -5,6 +5,8 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
+use App\Http\Livewire\ServiceCategoriesComponent;
+use App\Models\ServiceCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,7 @@ use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 //     return view('welcome');
 // });
 Route::get('/', HomeComponent::class)->name('home');
+Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 
 //For Customer
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
