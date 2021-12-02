@@ -52,10 +52,9 @@
                 <nav class="flat-mega-menu">
                     <label for="mobile-button"> <i class="fa fa-bars"></i></label>
                     <input id="mobile-button" type="checkbox">
-
                     <ul class="collapse">
                         <li class="title">
-                                <a href="index.php.html"><img src="{{asset('images/logo.png">')}}"</a>
+                                <a href="index.php.html"><img src="{{asset('images/logo.png')}}"</a>
                             </li>
                         <li> <a href="javascript:void(0);">Air Conditioners</a>
                                 <ul class="drop-down one-column hover-fade">
@@ -125,26 +124,26 @@
                                 @if(Auth::user()->utype==='ADM')
                                     <li class="login-form"> <a href="#" title="Register">My account (Admin)</a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="#">Dashboard</a></li>
+                                            <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
                                 @elseif (Auth::user()->utype==='SVP')
                                     <li class="login-form"> <a href="#" title="Register">My account (S Provider)</a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="#">Dashboard</a></li>
+                                            <li><a href="{{ route('sprovider.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
                                 @else
                                     <li class="login-form"> <a href="#" title="Register">My account (Customer)</a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="#">Dashboard</a></li>
+                                            <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
                                 @endif
-                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none">
                                 @csrf
                             </form>
                             @else
