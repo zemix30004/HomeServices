@@ -15,7 +15,6 @@ use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceDetailsComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
-use App\Models\ServiceCategory;
 
 /*
 |--------------------------------------------------------------------------

@@ -13,6 +13,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </div>
     <section class="content-central">
@@ -102,6 +103,16 @@
                                                 </select>
                                                 @error('discount_type') <p class="text-danger">{{ $message }}</p>
                                                 @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="slug" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="forn-control" wire:model="featured">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group">

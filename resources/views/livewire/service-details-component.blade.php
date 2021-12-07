@@ -81,9 +81,9 @@
                                             <td>Quntity</td>
                                             <td>1</td>
                                         </tr>
-                                        @php
-                                            $total = $service->price;
-                                        @endphp
+                                            @php
+                                                $total = $service->price;
+                                            @endphp
                                         @if($service->discount)
                                             @if($service->discount_type == 'fixed')
                                             <tr>
@@ -99,6 +99,7 @@
                                             @php $total = $total-($total*$service->discount/100);
                                             @endphp
                                             </tr>
+                                        @endif
                                         @endif
                                             <tr>
                                                 <td>Total</td>
