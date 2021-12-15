@@ -54,7 +54,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                            <div class="form-group">
+                                        <div class="form-group">
                                                 <label for="image" class="control-label col-sm-3">Category Image: </label>
                                             <div class="col-sm-9">
                                                 <input type="file" class="form-control-file" name="image" wire:model="newimage" />
@@ -67,6 +67,17 @@
                                                 @endif
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="featured" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" name="featured" wire:model="featured">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                     <button type="submit" class="btn btn-success pull-right">Update Category</button>
                                 </form>
                             </div>
