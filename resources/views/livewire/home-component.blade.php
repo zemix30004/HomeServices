@@ -2,18 +2,14 @@
     <section class="tp-banner-container">
         <div class="tp-banner">
             <ul>
+                @foreach ($slides as $slide )
                 <li data-transition="slidevertical" data-slotamount="1" data-masterspeed="1000"
                         data-saveperformance="off" data-title="Slide">
-                        <img src="{{asset('assets/img/slide/1.jpg')}}" alt="fullslide1" data-bgposition="center center"
+                        <img src="{{asset('images/slider')}}/{{ $slide->image }}" alt="{{ $slide->title }}" data-bgposition="center center"
                             data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                             data-bgfitend="100" data-bgpositionend="right center">
                 </li>
-                <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
-                        data-saveperformance="off" data-title="Slide">
-                        <img src="{{asset('assets/img/slide/2.jpg')}}" alt="fullslide1" data-bgposition="top center"
-                            data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
-                            data-bgfitend="100" data-bgpositionend="right center">
-                </li>
+                @endforeach
             </ul>
             <div class="tp-bannertimer"></div>
         </div>
@@ -23,7 +19,8 @@
                 <p class="lead">Book a service at very affordable price, </p>
             </div>
             <div class="filter-header">
-                <form id="sform" action="searchservices" method="post">
+                <form id="sform" action="{{ route('searchService') }}" method="post">
+                    @csrf
                         <input type="text" id="q" name="q" required="required" placeholder="What Services do you want?"
                             class="input-large typeahead" autocomplete="off">
                         <input type="submit" name="submit" value="Search">
@@ -155,3 +152,24 @@
         </div>
     </section>
 </div>
+
+@push('scripts')
+
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $('input.typeahead').typeahead({
+        source: function(query,process) {
+            return $.get(path,{query:query}, function(data) {
+                return process(data);
+            });
+        }
+    });
+
+    // $(document).ready(function() {
+    //     $('input.typeahead').change(function() {
+    //         $('sform'.submit();)
+    //     })
+    // });
+</script>
+
+@endpush

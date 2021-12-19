@@ -128,7 +128,7 @@
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('admin.service_categories') }}">Service Categories</a></li>
                                             <li><a href="{{ route('admin.all_services') }}">All Services</a></li>
-
+                                            <li><a href="{{ route('admin.slider') }}">Manage Slider</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
@@ -305,6 +305,7 @@
                 });
         });
     </script>
+    @stack('scripts')
     @livewireScripts
 </body>
 </html>
