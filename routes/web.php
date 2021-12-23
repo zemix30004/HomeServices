@@ -17,6 +17,8 @@ use App\Http\Livewire\Admin\AdminSliderComponent;
 use App\Http\Livewire\ChangeLocationComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
+use App\Http\Livewire\Sprovider\SproviderProfileComponent;
+use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
 use App\Http\Livewire\ServiceDetailsComponent;
 use App\Http\Livewire\ServicesByCategoryComponent;
@@ -52,6 +54,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //For Service Provider
 Route::middleware(['auth:sanctum', 'verified', 'authsprovider'])->group(function () {
     Route::get('/sprovider/dashboard', SproviderDashboardComponent::class)->name('sprovider.dashboard');
+    Route::get('/sprovider/profile', SproviderProfileComponent::class)->name('sprovider.profile');
+    Route::get('/sprovider/profile/edit', EditSproviderProfileComponent::class)->name('sprovider.edit_profile');
 });
 
 //For Admin
